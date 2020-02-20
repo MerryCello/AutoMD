@@ -1,5 +1,5 @@
 {
-  "name": "junk_npmtest",
+  "name": "auto-md",
   "version": "1.0.0",
   "description": "test",
   "main": "index.js",
@@ -12,5 +12,14 @@
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "path": "^0.12.7"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grumpyCello/AutoMD.git"
+  },
+  "bugs": {
+    "url": "https://github.com/grumpyCello/AutoMD/issues"
+  },
+  "homepage": "https://github.com/grumpyCello/AutoMD#readme"
 }
