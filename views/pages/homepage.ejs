@@ -1,25 +1,96 @@
 <%#
-Takes in following .ejs files:
+Takes in the following .ejs files as those tokens:
     addNewCar
     carsTracked
     gas
     maintenance
     oil
     signInUp
+
+for usage:
+<%- addNewCar %>
+<%- carsTracked %>
 %>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Test</title>
+    <title>Auto M.D.</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
-    <h1>Test</h1>
-    <h4>It worked</h4>
-    <%- addNewCar %>
-    <%- carsTracked %>
+
+    <main>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">Car 1</a>
+            <a href="#">Car 2</a>
+        </div>
+
+        <div id="area">
+            <span id="sideMenu" style="cursor:pointer" onclick="openNav()">Other cars owned</span>
+            <h1>
+                Auto M.D.&trade;
+            </h1>
+            <img id="logo" alt="logo" src="/media/logo.png">
+        </div>
+        <div id="bottom-bar">
+            <section>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <picture>
+                                    <source media="(min-width:680px)" srcset="/media/gasPump.jpg">
+                                    <img src="/media/gasPump-small.jpg" alt="Gas">
+                                </picture>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <picture>
+                                    <source media="(min-width:680px)" srcset="/media/oilDrop.jpg">
+                                    <img src="/media/oilDrop-small.jpg" alt="Oil">
+                                </picture>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <picture>
+                                    <source media="(min-width:680px)" srcset="/media/wrench.jpg">
+                                    <img src="/media/wrench-small.jpg" alt="Basic Maintenance">
+                                </picture>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <picture>
+                                    <source media="(min-width:680px)" srcset="/media/book.jpg">
+                                    <img src="/media/book-small.jpg" alt="Car Manual">
+                                </picture>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>
+            &copy; 2020, Auto M.D. |
+            <span id="lastModified"></span> |
+            Icons provided by <a href="https://www.vecteezy.com/">Vecteezy</a>
+        </p>
+    </footer>
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/css/amdStyle.css">
+
+    <!-- import the webpage's javascript file -->
+    <script src="/js/amdFunctions.js" defer></script>
 </body>
+
 </html>
