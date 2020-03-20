@@ -6,10 +6,6 @@ Takes in the following .ejs files as those tokens:
     maintenance
     oil
     signInUp
-
-for usage:
-<%- addNewCar %>
-<%- carsTracked %>
 %>
 
 <!DOCTYPE html>
@@ -23,7 +19,9 @@ for usage:
 </head>
 
 <body>
-
+    <%# usage example: %>
+    <%- addNewCar %>
+    <%- carsTracked %>
     <main>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
