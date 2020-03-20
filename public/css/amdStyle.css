@@ -1,0 +1,158 @@
+/* CSS files add styling rules to your content */
+
+body {
+    font-family: helvetica, arial, sans-serif;
+    margin: 2em;
+}
+
+footer {
+    text-align: center;
+}
+
+#bottom-bar section {
+    background-color: #fff;
+}
+
+#bottom-bar ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#area {
+    display: flex;
+    background-color: #5099f7;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#area h1 {
+    font-weight: bold;
+    font-size: 6vw;
+    align-self: center;
+    color: #000;
+}
+
+#logo {
+    width: 50vw;
+}
+
+/* Sidebar */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #0377fc;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #000;
+    background-color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#sideMenu {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    border-radius: 0px 50px 50px 0px;
+    background-color: #0a1fa8;
+    padding: 2vw;
+    color: #fff;
+    font-size: 2vw;
+    height: 38vw;
+    width: 1vw;
+    position: absolute;
+    z-index: 1;
+    top: 8%;
+    left: 0;
+}
+
+@media screen and (max-width:680px){
+      
+  #area{
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    background-color: #fff;
+  }
+  #area h1{
+    grid-column:2/3;
+    grid-row:1/2;
+    justify-self: start;
+  }
+  #logo {
+      width: 20vw;
+      grid-column:1/2;
+      grid-row:1/2;
+  }
+  #bottom-bar section {
+    background-color: #5099f7;
+    position: fixed;
+    bottom:0;
+    left:0;
+    right:0;
+  }
+  #bottom-bar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding:10px
+  }
+  #sideMenu {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    border-radius: 45px 0px 0px 45px;
+    background-color: #0a1fa8;
+    padding: 2vw;
+    color: #fff;
+    font-size: 3vw;
+    height: 55vw;
+    width: 1vw;
+    position:relative;
+    z-index: 1;
+    grid-row:2/3;
+    grid-column:2/3;
+    justify-self: end;
+  }
+  .sidenav {
+    height: 73%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    left: initial;
+    background-color: #0377fc;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  .sidenav a{
+    font-size: 3vw;
+  }
+  footer{
+    display: none;
+  }
+}
