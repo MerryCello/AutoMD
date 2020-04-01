@@ -16,21 +16,21 @@ Takes in the following .ejs files as those tokens:
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
-    <%# Insert where needed. Usage example: %>
-    <%- addNewCar %>
-    <%- carsTracked %>
-    <%- gas %>
-    <%- maintenance %>
-    <%- oil %>
-    <%- signInUp %>
     <main>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="#">Car 1</a>
             <a href="#">Car 2</a>
+            <a href="javascript:void(0);" class="popupLink">+</a>
+        </div>
+        <div class="popup" tabindex="-1">
+            <%- addNewCar %>
         </div>
 
         <div id="area">
@@ -45,26 +45,26 @@ Takes in the following .ejs files as those tokens:
                 <nav>
                     <ul>
                         <li>
-                            <a href="#">
-                                <picture>
+                            <a href="javascript:void(0);">
+                                <picture class="slideLink">
                                     <source media="(min-width:680px)" srcset="/media/gasPump.jpg">
-                                    <img src="/media/gasPump-small.jpg" alt="Gas">
+                                    <img src="/media/gasPump-small.jpg" alt="Gas" id="gas">
                                 </picture>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <picture>
+                            <a href="javascript:void(0);">
+                                <picture class="slideLink">
                                     <source media="(min-width:680px)" srcset="/media/oilDrop.jpg">
-                                    <img src="/media/oilDrop-small.jpg" alt="Oil">
+                                    <img src="/media/oilDrop-small.jpg" alt="Oil" id="oil">
                                 </picture>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <picture>
+                            <a href="javascript:void(0);">
+                                <picture class="slideLink">
                                     <source media="(min-width:680px)" srcset="/media/wrench.jpg">
-                                    <img src="/media/wrench-small.jpg" alt="Basic Maintenance">
+                                    <img src="/media/wrench-small.jpg" alt="Basic Maintenance" id="maintenance">
                                 </picture>
                             </a>
                         </li>
@@ -88,6 +88,23 @@ Takes in the following .ejs files as those tokens:
             Icons provided by <a href="https://www.vecteezy.com/">Vecteezy</a>
         </p>
     </footer>
+
+    <div class="slide gas" tabindex="-1">
+        <hr class="slit close">
+        <%- gas %>
+    </div>
+    <div class="slide oil" tabindex="-1">
+        <hr class="slit close">
+        <%- oil %>
+    </div>
+    <div class="slide maintenance" tabindex="-1">
+        <hr class="slit close">
+        <%- maintenance %>
+    </div>
+    
+    <%- carsTracked %>
+    <%- signInUp %>
+
     <!-- import the webpage's javascript file -->
     <script src="/js/amdFunctions.js" defer></script>
 

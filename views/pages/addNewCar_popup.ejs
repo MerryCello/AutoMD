@@ -1,0 +1,115 @@
+<h2>Track New Car</h2>
+<table class="center">
+    <tbody>
+        <tr>
+            <td>
+                <div>
+                    <label for="make">Make</label><br>
+                    <select name="make" id="make">
+                        <option selected value="null">&#10092;select&#10093;</option>
+                        <option value="Honda">Honda</option>
+                        <option value="Toyota">Toyota</option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <label for="model">Model</label><br>
+                    <select name="model" id="model">
+                        <option selected value="null">&#10092;select&#10093;</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    <label for="year">Year</label><br>
+                    <select name="year" id="year">
+                        <option selected value="null">&#10092;select&#10093;</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <label for="trim">Trim</label><br>
+                    <select name="trim" id="trim">
+                        <option selected value="null">&#10092;select&#10093;</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<input type="button" value="&#10005;" class="close"><!-- X -->
+<input type="button" value="&#10004;" class="close"><!-- Chechmark -->
+
+<script>
+    let trims = {
+        'Toyota' : [
+            ['Corolla', [
+                'L',
+                'LE',
+                'XLE',
+                'SE',
+                'XSE',
+                'Nightshade'
+            ]],
+            ['Camry', [
+                'L',
+                'LE',
+                'SE',
+                'SE Nightshade',
+                'XLE',
+                'XSE',
+                'TRD V6',
+                'XLE V6',
+                'XSE V6'
+            ]]
+        ],
+        'Honda' : [
+            ['Accord', [
+                'LX',
+                'Sport',
+                'EX',
+                'EX-L',
+                'Sport 2.0T',
+                'EX-L 2.0T',
+                'Touring 2.0T'
+            ]]
+        ]
+    }
+    let cars = [
+        ['Toyota', new Map(trims.Toyota)],
+        ['Honda' , new Map(trims.Honda)]
+    ]
+    /// Map<String, Map<String, Array<String>>>
+    var carsMap = new Map(cars);
+    // alert(JSON.stringify(carsMap.get('Honda').get('Accord')));
+
+    $('#make').click(() => {
+        let makeSel = $('#make').val();
+        $('#model option:gt(0)').remove();
+        $('#trim option:gt(0)').remove();
+        if (makeSel != 'null') {    
+            carsMap.get(makeSel).forEach((value, key) => {
+                $('#model').append($("<option></option>")
+                    .attr("value", key).text(key));
+            });
+        }
+    });
+
+    $('#model').click(() => {
+        let makeSel = $('#make').val();
+        let modelSel = $('#model').val();
+        $('#trim option:gt(0)').remove();
+        if (modelSel != 'null') {    
+            carsMap.get(makeSel).get(modelSel).forEach((value, key) => {
+                $('#trim').append($("<option></option>")
+                    .attr("value", value).text(value));
+            });
+        }
+    });
+</script>

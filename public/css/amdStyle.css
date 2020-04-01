@@ -90,6 +90,68 @@ footer {
     left: 0;
 }
 
+hr.slit { width: 40px; }
+.slideLink {}
+.gas {}
+.oil {}
+.slide {
+    height: 85vh;
+    width: auto;
+    background: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    border: solid darkgray 1px;
+    border-radius: 30px 30px 0px 0px;
+    color: black;
+    text-align: center;
+    display: none;
+    top: 15vh;
+    bottom: 100px;
+    left: 0px;
+    right: 0px;
+    position: fixed;
+    z-index: 1;
+    outline:0;
+}
+
+.popupLink {}
+.popup {
+    height: 65vh;
+    width: 90vw;
+    background: white;
+    border: solid darkgray 1px;
+    border-radius: 30px;
+    color: black;
+    text-align: center;
+    display: none;
+    top: 25vh;
+    bottom: 10vh;
+    position: fixed;
+    z-index: 1;
+    outline:0;
+}
+table.center {
+  margin-left:auto; 
+  margin-right:auto;
+}
+.textAlign-left {
+  text-align: left;
+}
+.textAlign-center {
+  text-align: center;
+}
+.toBottom {
+  position: absolute;
+  bottom: 10vh;
+  left: 15vw;
+}
+.toCenter {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+}
+
 @media screen and (max-width:680px){
       
   #area{
