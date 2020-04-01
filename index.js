@@ -35,5 +35,5 @@ Router.get('/', (req, res) => {
 app.use('/', Router)
 
 app.listen(app.get('port'), () => {
-    console.log('Listening on port: ' + app.get('port') + '\nat \"http://localhost:5000/\"')
+    console.log('Listening on port: ' + app.get('port') + ' at \"http://localhost:5000/\"')
 })
