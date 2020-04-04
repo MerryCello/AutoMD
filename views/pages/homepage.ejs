@@ -21,13 +21,23 @@ Takes in the following .ejs files as those tokens:
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
-<body>
+<body class="noScrollbar">
     <main>
-        <div id="mySidenav" class="sidenav">
+        <div id="mySidenav" class="sidenav noScrollbar">
+            <a href="javascript:void(0);" class="popupLink addbtn">+</a>
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#">Car 1</a>
-            <a href="#">Car 2</a>
-            <a href="javascript:void(0);" class="popupLink">+</a>
+            <a href="#">
+                <img id="car1" src="/media/hondaAccord2019.png" alt="Honda Accord 2019" class="thumbnail">
+                <label for="car1">Honda Accord 2019</label>
+            </a>
+            <a href="#">
+                <img id="car2" src="/media/toyotaCamry2020.png" alt="Toyota Camry 2020" class="thumbnail">
+                <label for="car2">Toyota Camry 2020</label>
+            </a>
+            <a href="#">
+                <img id="car3" src="/media/toyotaCorolla2020.png" alt="Toyota Corolla 2020" class="thumbnail">
+                <label for="car3">Toyota Corolla 2020</label>
+            </a>
         </div>
         <div class="popup" tabindex="-1">
             <%- addNewCar %>

@@ -38,6 +38,10 @@ footer {
     width: 50vw;
 }
 
+.noScrollbar::-webkit-scrollbar {
+    width: 0px;
+}
+
 /* Sidebar */
 .sidenav {
     height: 100%;
@@ -47,13 +51,18 @@ footer {
     top: 0;
     left: 0;
     background-color: #0377fc;
+    /* background-color: #BADA55; */
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
 }
+.sidenav .addbtn {
+    font-size: 2em !important;
+    margin-top: 100px;
+}
 
 .sidenav a {
-    padding: 8px 8px 8px 32px;
+    padding: 8px 8px 8px 20px;
     text-decoration: none;
     font-size: 25px;
     color: #fff;
@@ -69,9 +78,14 @@ footer {
 .sidenav .closebtn {
     position: absolute;
     top: 0;
-    right: 25px;
+    right: 35px;
     font-size: 36px;
-    margin-left: 50px;
+    margin-left: 10px;
+}
+
+.sidenav .thumbnail {
+  width: 100%;
+  height: 100%;
 }
 
 #sideMenu {
@@ -115,6 +129,7 @@ hr.slit { width: 40px; }
     outline:0;
 }
 
+/* For more info on popup see http://jsfiddle.net/LxauG/606/ */
 .popupLink {}
 .popup {
     height: 65vh;
@@ -154,6 +169,9 @@ table.center {
 
 @media screen and (max-width:680px){
       
+  body {
+    margin-right: 0em;
+  }
   #area{
     display: grid;
     grid-template-columns: 25% 1fr;
@@ -213,6 +231,10 @@ table.center {
   }
   .sidenav a{
     font-size: 3vw;
+  }
+  .sidenav .closebtn {
+    top: auto !important;
+    bottom: 0 !important;
   }
   footer{
     display: none;
