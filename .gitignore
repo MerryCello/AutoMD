@@ -1,2 +1,5 @@
 *.code-workspace
 **junk**
+.DS_Store
+UserInterfaceState.xcuserstate
+/IOS-version
